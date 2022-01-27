@@ -1,1 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #FFF8F9;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+h3 {
+    margin-top: 0;
+}
+
+img {
+    align-self: center;
+}
+
+header {
+    background-color: white;
+    justify-content: center;
+    display: flex;
+}
+
+.header {
+    display: flex;
+    padding: 10px;
+}
+.header h1 {
+    margin-left: 10px;
+    color: #FF4949;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.find-card, .register-card, .quote {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin: 10px;
+    text-align: center;
+    width: 30%;
+}
+.find-card p {
+    color: #A1A1A1;
+    font-size: 0.75em;
+}
+
+.quotes {
+    margin: 20px;
+}
+.quote {
+    color: #FF4949;
+
+}
+.quote img {
+    width: 2em;
+}
+
+form {
+    display: block;
+    margin: 0 10px;
+}
+input {
+    background-color: #FFF1F4;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 20px;
+}
+
+[type="submit"] {
+    background-color: red;
+    color: white;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.register-card input:nth-child(3) {
+    width: 50%;
+    margin-left: 0;
+}
+.register-card input:nth-child(4) {
+    width: 30%;
+}
