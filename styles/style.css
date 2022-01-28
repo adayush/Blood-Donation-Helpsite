@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -37,57 +38,86 @@ header {
 
 .content {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
     align-items: center;
-    padding: 20px;
+    margin: 20px 15%;
 }
 
 .find-card, .register-card, .quote {
+    margin: 20px 10px;
+    margin-bottom: 30px;
+    padding: 20px 20px;
     background-color: white;
     border-radius: 20px;
-    padding: 20px 20px;
-    margin: 10px;
+}
+
+.find-card, .register-card {
     text-align: center;
     width: 30%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
 }
+
+.find-card:hover, .register-card:hover {
+    transform: scale(1.1);
+}
+
+.quotes {
+    text-align: center;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 1100px) {
+    .content {
+        margin: 30px 5%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .find-card, .register-card {
+        width: 80%;
+    }
+    .quotes {
+        order: 1;
+        width: 80%;
+    }
+    .content {
+        margin: 30px 5%;
+    }
+}
+
 .find-card p {
     color: #A1A1A1;
     font-size: 0.75em;
 }
 
-.quotes {
-    margin: 20px;
-}
-.quote {
-    color: #FF4949;
-
-}
 .quote img {
     width: 2em;
 }
 
-form {
-    display: block;
-    margin: 0 10px;
-}
 input {
+    width: 90%;
     background-color: #FFF1F4;
-    padding: 5px 10px;
+    padding: 5px 15px;
     margin: 5px 0;
     border: none;
     border-radius: 20px;
+    font-size: 0.8em;
 }
 
 [type="submit"] {
-    background-color: red;
+    background-color: #FF4949;
     color: white;
-    width: 100%;
     margin: 30px 0;
+    font-weight: 500;
 }
 
-.register-card input:nth-child(3) {
-    width: 50%;
-    margin-left: 0;
-}
-.register-card input:nth-child(4) {
-    width: 30%;
+.input-group {
+    width: 45%;
 }
