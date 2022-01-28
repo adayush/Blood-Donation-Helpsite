@@ -51,13 +51,13 @@ header {
     padding: 20px 20px;
     background-color: white;
     border-radius: 20px;
+    transition: all .2s ease-in-out; /* Not working on img inside quote, thus added seperately */
 }
 
 .find-card, .register-card {
     text-align: center;
     width: 30%;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-    transition: all .2s ease-in-out;
 }
 
 .find-card:hover, .register-card:hover {
@@ -99,9 +99,14 @@ header {
 
 .quote img {
     width: 2em;
+    transition: all .2s ease-in-out;
 }
 
-input {
+.quote:hover img {
+    transform: scale(1.2);
+}
+
+input, select {
     width: 90%;
     background-color: #FFF1F4;
     padding: 5px 15px;
