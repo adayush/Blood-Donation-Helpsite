@@ -1,3 +1,5 @@
 node_modules
 .env
 cities.json
+.vercel
+notepad.txt
