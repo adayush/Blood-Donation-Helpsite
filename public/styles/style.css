@@ -41,7 +41,7 @@ header {
     justify-content: space-around;
     flex-flow: wrap;
     align-items: center;
-    margin: 20px 15%;
+    margin: 30px 15%;
 }
 
 .find-card, .register-card, .quote {
@@ -72,11 +72,11 @@ header {
     font-size: 0.8em;
 }
 
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
     .content {
-        margin: 30px 5%;
+        margin: 30px 15%;
     }
-}
+} */
 
 @media screen and (max-width: 620px) {
     .find-card, .register-card {
