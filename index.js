@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Using promises. Benefitial if having multiple async ops to handle in single request
 app.get('/', async (request, response) => {
 
-    response.send( await readFile('./index.html, 'utf8') );
+    response.send( await readFile('./index.html', 'utf8') );
 
     readFile('./index.html', 'utf8', (err, html) => {
         if (err) {
