@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2"
+  },
+  "name": "blood-donation-helpsite",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adayush/Blood-Donation-Helpsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adayush/Blood-Donation-Helpsite/issues"
+  },
+  "homepage": "https://github.com/adayush/Blood-Donation-Helpsite#readme"
+}
