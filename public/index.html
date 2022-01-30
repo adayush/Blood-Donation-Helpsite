@@ -15,10 +15,11 @@
         <div class="content">
             <div class="register-card">
                 <h3>Register as a Donor</h3>
-                <form>
+                <form action="/" method="post">
                     <input name="name" placeholder="Full name" required>
-                    <input name="number" placeholder="Mobile number" required>
+                    <input name="number" type="number" placeholder="Mobile number" required>
                     <select name="group" class="input-group" required>
+                        <option value="" selected disabled>Blood group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
                         <option value="B+">B+</option>
@@ -28,7 +29,7 @@
                         <option value="AB+">AB+</option>
                         <option value="AB-">AB-</option>
                     </select>
-                    <input name="age" class="input-group" placeholder="Age (18-65)" required>
+                    <input name="age" class="input-group" type="number" placeholder="Age (18-65)" min=18 max=65 required>
                     <input name="city" placeholder="City" required>
                     <input type="submit" value="Register">
                 </form>
@@ -51,7 +52,17 @@
                 <h3>Find Donor</h3>
                 <form>
                     <input name="city" placeholder="City" required>
-                    <input name="group" placeholder="Blood group" required>
+                    <select name="group" class="input-group" required>
+                        <option value="" selected disabled>Blood group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
                     <p>We only support cities and towns
                         in Rajasthan for now</p>
                     <input type="submit" value="Search">
