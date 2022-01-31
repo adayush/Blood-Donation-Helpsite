@@ -1,12 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const { readFile } = require('fs').promises;
 require('dotenv').config()
-var path = require('path')
 
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // To serve static files. Put all static files in public folder
+var path = require('path')
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*
@@ -24,19 +25,11 @@ app.get('/', async (request, response) => {
 
     response.send( await readFile('./index.html', 'utf8') );
 
-    readFile('./index.html', 'utf8', (err, html) => {
-        if (err) {
-            response.status(500).send('couldnt fetch html');
-        }
-        response.send(html);
-
-    })
 });
 
-app.post('/', (request, response) => {
+app.post('/new-donor', (request, response) => {
     console.log(request.body);
-    response.send('Form submitted');
+    response.send(request.body);
 });
 
-
-app.listen(process.env.PORT, () => console.log(`App available on ${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`App available on http://localhost:${process.env.PORT}`));
