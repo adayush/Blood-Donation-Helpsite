@@ -17,8 +17,8 @@
                 <h3>Register as a Donor</h3>
                 <form action="/new-donor" method="post">
                     <input name="name" placeholder="Full name" required>
-                    <input name="number" type="number" placeholder="Mobile number" required>
-                    <select name="group" class="input-group" required>
+                    <input name="mobile" type="number" placeholder="Mobile number" required>
+                    <select name="bloodgroup" class="input-group" required>
                         <option value="" selected disabled>Blood group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -29,7 +29,7 @@
                         <option value="AB+">AB+</option>
                         <option value="AB-">AB-</option>
                     </select>
-                    <input name="age" class="input-group" type="number" placeholder="Age (18-65)" min=18 max=65 required>
+                    <input name="dob" class="input-group" type="date" placeholder="Age 18-65" required>
                     <input name="city" placeholder="City" required>
                     <input type="submit" value="Register">
                 </form>
@@ -52,7 +52,7 @@
                 <h3>Find Donor</h3>
                 <form>
                     <input name="city" placeholder="City" required>
-                    <select name="group" class="input-group" required>
+                    <select name="bloodgroup" class="input-group" required>
                         <option value="" selected disabled>Blood group</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>

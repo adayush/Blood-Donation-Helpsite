@@ -139,3 +139,30 @@ input[type=number] {
 .input-group {
     width: 45%;
 }
+
+
+/***  Styles for partials and ejs  ***/
+
+.content-ejs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20vh 15%;
+}
+
+.status-box {
+    margin: 20px 10px;
+    padding: 20px 20px;
+    background-color: white;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.status-box img {
+    width: 2em;
+    margin: 10px 0;
+    transform: scale(1.2);
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/style.css">
+        <script src="./scripts/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <img src="./images/blood-icon.png">
+                <h1 id="title">Blood Donation Helpline</h1>
+            </div>
+        </header>
+        <div class="content-ejs">
+            <div class="status-box">
+                <%- include('./'+status); %>
+                <a href="/">
+                    <input type="submit" value="Go back">
+                </a>
+            </div>
+        </div>
+        </body>
+    </body>
+</html>
