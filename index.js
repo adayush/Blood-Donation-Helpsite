@@ -82,7 +82,8 @@ app.post('/new-donor', async (request, response) => {
 });
 
 app.get('/new-donor', async (request, response) => {
-    response.redirect('/');
+    response.render('blank', { status: 'error' });
+    // response.redirect('/');
 });
 
 app.listen(process.env.PORT, () => console.log(`App available on http://localhost:${process.env.PORT}`));
