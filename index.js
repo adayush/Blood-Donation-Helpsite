@@ -13,10 +13,13 @@ app.set('view engine', 'ejs');
 
 // To serve static files. Put all static files in public folder
 var path = require('path');
-const { response } = require('express');
-const req = require('express/lib/request');
+
+// never used -- to be deleted if everything works
+// const { response } = require('express');
+// const req = require('express/lib/request');
+
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'public/partials'));
+app.set('views', path.join(__dirname, 'public/views'));
 
 /*
 app.get('/', (request, response) => {
@@ -36,12 +39,13 @@ app.get('/', async (request, response) => {
 });
 
 app.post('/new-donor', async (request, response) => {
-
+    response.send(request.body);
+/*
     // Check if user already exists
     let { data: donors, err } = await supabase.from('donors').select("*").eq('mobile', request.body.mobile)
 
     response.send([donors, err]);
-    /*
+
     if(err != null) {
         response.render('blank', {
             status: 'error',
