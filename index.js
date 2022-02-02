@@ -95,7 +95,7 @@ app.get('/new-donor', async (request, response) => {
 */
 
 app.get('/find-donor', async (request, response) => {
-    response.render('blank', { status: 'error' });
+    response.render('blank', { status: 'error', code: '703' });
     // response.redirect('/');
 });
 

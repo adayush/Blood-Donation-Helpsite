@@ -18,16 +18,16 @@ fs.readFile('Raj.txt', 'utf-8', (err, data) => {
 */
 
 // https://blood-donation-helpsite.vercel.app/
+const form1 = document.querySelector('#register-form')
 
-form.addEventListener('submit', (e) => {
-    const form = document.querySelector('#register-form')
-    const formData = new FormData(form);
+form1.addEventListener('submit', (e) => {
+    const formData = new FormData(form1);
     const data = Object.fromEntries(formData.entries());
 
     //prevent form submitting like default
     e.preventDefault();
 
-    fetch(form.action, {
+    fetch(form1.action, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
