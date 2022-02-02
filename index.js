@@ -87,10 +87,12 @@ app.post('/new-donor', async (request, response) => {
     }
 });
 
+/*
 app.get('/new-donor', async (request, response) => {
     // response.render('blank', { status: 'error' });
     response.redirect('/');
 });
+*/
 
 app.get('/find-donor', async (request, response) => {
     response.render('blank', { status: 'error' });
