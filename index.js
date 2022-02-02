@@ -40,6 +40,8 @@ app.post('/new-donor', async (request, response) => {
     // Check if user already exists
     let { data: donors, err } = await supabase.from('donors').select("*").eq('mobile', request.body.mobile)
 
+    response.send([donors, err]);
+    /*
     if(err != null) {
         response.render('blank', {
             status: 'error',
@@ -79,6 +81,7 @@ app.post('/new-donor', async (request, response) => {
         });
 
     }
+    */
 });
 
 app.get('/new-donor', async (request, response) => {
