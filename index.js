@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 // To serve static files. Put all static files in public folder
 var path = require('path');
 
-// never used -- to be deleted if everything works
+// never used -- to be deleted
 // const { response } = require('express');
 // const req = require('express/lib/request');
 
@@ -39,16 +39,14 @@ app.get('/', async (request, response) => {
 });
 
 app.post('/new-donor', async (request, response) => {
-    response.send(request.body);
-/*
+
     // Check if user already exists
     let { data: donors, err } = await supabase.from('donors').select("*").eq('mobile', request.body.mobile)
-
-    response.send([donors, err]);
 
     if(err != null) {
         response.render('blank', {
             status: 'error',
+            code: '701'
         });
     }
 
@@ -66,7 +64,10 @@ app.post('/new-donor', async (request, response) => {
         console.log([data, error]);
 
         if(error != null) {
-            response.render('blank', { status: 'error' });
+            response.render('blank', {
+                status: 'error',
+                code: '702'
+            });
         }
 
         response.render('blank', {
@@ -75,22 +76,18 @@ app.post('/new-donor', async (request, response) => {
             mobile: request.body.mobile
         });
 
-
     } else {
-
         response.render('blank', {
             status: 'exists',
             name: donors[0].name,
             mobile: donors[0].mobile
         });
-
     }
-    */
 });
 
 app.get('/new-donor', async (request, response) => {
-    response.render('blank', { status: 'error' });
-    // response.redirect('/');
+    // response.render('blank', { status: 'error' });
+    response.redirect('/');
 });
 
 app.get('/find-donor', async (request, response) => {
