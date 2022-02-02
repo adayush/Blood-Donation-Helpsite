@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const bodyParser = require('body-parser');
 const { createClient } = require('@supabase/supabase-js');
 const { readFile } = require('fs').promises;
@@ -7,6 +8,7 @@ require('dotenv').config()
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs');
