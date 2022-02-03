@@ -3,7 +3,6 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/style.css">
-        <script src="./scripts/script.js"></script>
     </head>
     <body>
         <header>
@@ -16,21 +15,21 @@
             <div class="register-card">
                 <h3>Register as a Donor</h3>
                 <form action="/new-donor" id="register-form" method="post">
-                    <input name="name" placeholder="Full name" required>
-                    <input name="mobile" type="number" placeholder="Mobile number" required>
+                    <input name="name" placeholder="Full name" autocomplete=”off” required>
+                    <input name="mobile" type="number" placeholder="Mobile number" autocomplete=”off” required>
                     <select name="bloodgroup" class="input-group" required>
                         <option value="" selected disabled>Blood group</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
+                        <option value="Apos">A+</option>
+                        <option value="Aneg">A-</option>
+                        <option value="Bpos">B+</option>
+                        <option value="Bneg">B-</option>
+                        <option value="Opos">O+</option>
+                        <option value="Oneg">O-</option>
+                        <option value="ABpos">AB+</option>
+                        <option value="ABneg">AB-</option>
                     </select>
-                    <input name="dob" class="input-group" type="date" placeholder="Age 18-65" required>
-                    <input name="city" placeholder="City" required>
+                    <input name="dob" class="input-group" type="date" placeholder="Age 18-65" autocomplete=”off” required>
+                    <input name="city" placeholder="City" list="cities" onchange="cityVal(this)" autocomplete=”off” required>
                     <input type="submit" value="Register">
                 </form>
             </div>
@@ -50,18 +49,18 @@
             </div>
             <div class="find-card">
                 <h3>Find Donor</h3>
-                <form  action="/find-donor" method="post">
-                    <input name="city" placeholder="City" required>
+                <form action="/find-donor" id="find-form" method="post">
+                    <input name="city" placeholder="City" list="cities" onchange="cityVal(this)" autocomplete=”off” required>
                     <select name="bloodgroup" class="input-group" required>
                         <option value="" selected disabled>Blood group</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
+                        <option value="Apos">A+</option>
+                        <option value="Aneg">A-</option>
+                        <option value="Bpos">B+</option>
+                        <option value="Bneg">B-</option>
+                        <option value="Opos">O+</option>
+                        <option value="Oneg">O-</option>
+                        <option value="ABpos">AB+</option>
+                        <option value="ABneg">AB-</option>
                     </select>
                     <p>We only support cities and towns
                         in Rajasthan for now</p>
@@ -69,6 +68,10 @@
                 </form>
             </div>
         </div>
+        <datalist id="cities">
+            <%- include('datalist') %>
+        </datalist>
         </body>
     </body>
+    <script src="./scripts/script.js"></script>
 </html>

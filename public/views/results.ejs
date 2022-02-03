@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../styles/style.css">
+        <%
+            const getAge = (dob) => {
+                const birth = new Date(dob)
+                let diff_ms = Date.now() - birth;
+                let age_dt = new Date(diff_ms); 
+  
+                return Math.abs(age_dt.getUTCFullYear() - 1970);
+            };
+        %>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <img src="./images/blood-icon.png">
+                <h1 id="title">Blood Donation Helpline</h1>
+            </div>
+        </header>
+        <div class="content-results">
+            <ul>
+                <% donors.forEach(function(donor) { %>
+                  <% donor.age = getAge(donor.dob) %>
+                  <li>
+                    <h3><%= donor.name %> (<%= donor.age %>)</h3>
+                    <b>Mobile:</b> <a href='<%= donor.mobile %>'><%= donor.mobile %></a><br>
+                    <b>City:</b> <%= donor.city %>
+                    <a href="https://wa.me/91<%= donor.mobile %>"><img src="./images/whatsapp.png"></a>
+                  </li>
+                <% }); %>
+              </ul>
+        </div>
+        </body>
+    </body>
+</html>

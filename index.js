@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 
 // To serve static files. Put all static files in public folder
 var path = require('path');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 
 // never used -- to be deleted
 // const { response } = require('express');
@@ -36,7 +38,8 @@ app.get('/', (request, response) => {
 // Using promises. Benefitial if having multiple async ops to handle in single request
 app.get('/', async (request, response) => {
 
-    response.send( await readFile('./index.html', 'utf8') );
+    // response.send( await readFile('./index.html', 'utf8') );
+    response.render('index');
 
 });
 
@@ -58,7 +61,7 @@ app.post('/new-donor', async (request, response) => {
             {
                 name: request.body.name,
                 mobile: request.body.mobile,
-                bloodgroup: request.body.bloodgroup,
+                bloodgroup: bloodMap[request.body.bloodgroup],
                 dob: request.body.dob,
                 city: request.body.city
             }
@@ -87,16 +90,34 @@ app.post('/new-donor', async (request, response) => {
     }
 });
 
-/*
-app.get('/new-donor', async (request, response) => {
-    // response.render('blank', { status: 'error' });
-    response.redirect('/');
-});
-*/
+app.post('/find-donor', async (request, response) => {
 
-app.get('/find-donor', async (request, response) => {
-    response.render('blank', { status: 'error', code: '703' });
-    // response.redirect('/');
+    let { data: donors, error } = await supabase.from('donors').select("*").eq('city', request.body.city).eq('bloodgroup', bloodMap[request.body.bloodgroup])
+
+    console.log(donors);
+
+    console.log(request.body, donors);
+    response.render('results', {
+        donors: donors
+    });
 });
+
+const bloodMap = {
+    Opos: 'O+',
+    Oneg: 'O-',
+    Apos: 'A+',
+    Aneg: 'A-',
+    Bpos: 'B+',
+    Bneg: 'B-',
+    ABpos: 'AB+',
+    ABneg: 'AB-'
+}
+function age(dob) { 
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms); 
+  
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
 
 app.listen(process.env.PORT, () => console.log(`App available on http://localhost:${process.env.PORT}`));

@@ -1,42 +1,15 @@
-/*
-const fs = require('fs');
-
-
-// fs.writeFileSync("Raj.txt", JSON.stringify(Raj), function(err) {
-//     if (err) {
-//         console.log(err);
-//     }
-// });
-
-fs.readFile('Raj.txt', 'utf-8', (err, data) => {
-    if(err) {
-        throw err;
+// City Validation
+// Find all inputs on the DOM which are bound to a datalist via their list attribute.
+function cityVal(input) {
+    // console.log('Invoked', input.value)
+    for(const v of input.list.options) {
+        if(input.value == v.value) {
+            // console.log('Valid city detected');
+            input.setCustomValidity('');
+            return true;
+        }
     }
-
-    console.log(JSON.parse(data));
-})
-*/
-
-// https://blood-donation-helpsite.vercel.app/
-const form1 = document.querySelector('#register-form')
-
-form1.addEventListener('submit', (e) => {
-    const formData = new FormData(form1);
-    const data = Object.fromEntries(formData.entries());
-
-    //prevent form submitting like default
-    e.preventDefault();
-
-    fetch(form1.action, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(data => {
-        //do something with data
-        console.log(data);
-    })
-})
+    input.setCustomValidity('Please input valid city');
+    input.reportValidity();
+    return false;
+}
