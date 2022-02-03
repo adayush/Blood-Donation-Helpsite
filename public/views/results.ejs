@@ -25,10 +25,11 @@
                 <% donors.forEach(function(donor) { %>
                   <% donor.age = getAge(donor.dob) %>
                   <li>
-                    <h3><%= donor.name %> (<%= donor.age %>)</h3>
-                    <b>Mobile:</b> <a href='<%= donor.mobile %>'><%= donor.mobile %></a><br>
-                    <b>City:</b> <%= donor.city %>
-                    <a href="https://wa.me/91<%= donor.mobile %>"><img src="./images/whatsapp.png"></a>
+                    <h3><%= donor.name %> (<%= donor.bloodgroup %>)</h3>
+                    <b>Age:</b> <%= donor.age %><br>
+                    <b>City:</b> <%= donor.city %><br>
+                    <b>Mobile:</b> <%= donor.mobile.toString().slice(0, 5) %>XXXXX</a>                    
+                    <img src="./images/whatsapp.png"></a>
                   </li>
                 <% }); %>
               </ul>
