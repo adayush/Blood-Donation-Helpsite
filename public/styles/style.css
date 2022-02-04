@@ -146,6 +146,15 @@ form p {
     margin: 2em;
 }
 
+footer {
+    margin-top: 4em;
+    text-align: center;
+}
+footer svg {
+    display: block;
+    margin: auto;
+}
+
 
 /***  Styles for partials and ejs  ***/
 

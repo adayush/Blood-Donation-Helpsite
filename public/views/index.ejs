@@ -6,12 +6,7 @@
         <link rel="stylesheet" href="./styles/style.css">
     </head>
     <body>
-        <header>
-            <div class="header">
-                <img src="./images/blood-icon.png">
-                <h1 id="title">Blood Donation Helpline</h1>
-            </div>
-        </header>
+        <%- include('header') %>
         <div class="content">
             <div class="register-card">
                 <h3>Register as a Donor</h3>
@@ -73,6 +68,7 @@
         <datalist id="cities">
             <%- include('datalist') %>
         </datalist>
+        <%- include('footer') %>
         </body>
     </body>
     <script src="./scripts/script.js"></script>

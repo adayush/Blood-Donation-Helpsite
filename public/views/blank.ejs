@@ -6,15 +6,11 @@
         <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
-        <header>
-            <div class="header">
-                <img src="./images/blood-icon.png">
-                <h1 id="title">Blood Donation Helpline</h1>
-            </div>
-        </header>
+        <%- include('header') %>
         <div class="content-ejs">
             <%- include(status); %>
         </div>
+        <%- include('footer') %>
         </body>
     </body>
 </html>

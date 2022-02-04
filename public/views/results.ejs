@@ -15,12 +15,7 @@
         %>
     </head>
     <body>
-        <header>
-            <div class="header">
-                <img src="./images/blood-icon.png">
-                <h1 id="title">Blood Donation Helpline</h1>
-            </div>
-        </header>
+        <%- include('header') %>
         <div class="content-results">
             <ul>
                 <% donors.forEach(function(donor) { %>
@@ -35,6 +30,7 @@
                 <% }); %>
               </ul>
         </div>
+        <%- include('footer') %>
         </body>
     </body>
 </html>
