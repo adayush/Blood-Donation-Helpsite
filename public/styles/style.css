@@ -108,7 +108,7 @@ header {
 input, select {
     width: 90%;
     background-color: #FFF1F4;
-    padding: 5px 15px;
+    padding: 7px 15px;
     margin: 5px 0;
     border: none;
     border-radius: 20px;
@@ -138,6 +138,12 @@ input[type=number] {
 
 .input-group {
     width: 45%;
+}
+.input-group:nth-of-type(4) {
+    width: 55%;
+}
+form p {
+    margin: 2em;
 }
 
 

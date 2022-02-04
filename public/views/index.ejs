@@ -29,8 +29,9 @@
                         <option value="ABpos">AB+</option>
                         <option value="ABneg">AB-</option>
                     </select>
-                    <input name="dob" class="input-group" type="date" placeholder="Age 18-65" autocomplete=”off” required>
-                    <input name="city" placeholder="City" list="cities" onchange="cityVal(this)" autocomplete=”off” required>
+                    <input name="city" class="input-group" placeholder="City" list="cities" onchange="cityVal(this)" autocomplete=”off” required>
+                    <label for="dob">Birthday</label>
+                    <input name="dob" id="dob" class="input-group" type="date" placeholder="Age 18-65" autocomplete=”off” required>
                     <input type="submit" value="Register">
                 </form>
             </div>
