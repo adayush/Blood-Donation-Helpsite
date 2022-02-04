@@ -13,3 +13,16 @@ function cityVal(input) {
     input.reportValidity();
     return false;
 }
+
+const getDate = (num) => {
+    let d = new Date();
+
+    let m = (d.getMonth() + 1).toString()
+    let date = (d.getDate()).toString()
+
+    return `${d.getYear() - num + 1900}-${m.padStart(2, '0')}-${date.padStart(2, '0')}`
+}
+const min = getDate(65), max = getDate(18);
+
+document.querySelector('input[type="date"]').setAttribute('min', min);
+document.querySelector('input[type="date"]').setAttribute('max', max);
